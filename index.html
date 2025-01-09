@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mini Számológép</title>
+  <title>Tudományos Számológép és Pénzváltó</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -16,9 +16,23 @@
 
 <body>
 
-  <div id="calculator">
+  <div id="menu">
 
-    <div id="display">0</div>
+    <button onclick="showCalculator('simple')">Egyszerű Számológép</button>
+
+    <button onclick="showCalculator('scientific')">Tudományos Számológép</button>
+
+    <button onclick="showCalculator('currency')">Pénzváltó</button>
+
+  </div>
+
+
+
+  <!-- Egyszerű Számológép -->
+
+  <div id="simple-calculator" class="calculator">
+
+    <div id="display-simple">0</div>
 
     <div class="buttons">
 
@@ -58,8 +72,85 @@
 
   </div>
 
+
+
+  <!-- Tudományos Számológép -->
+
+  <div id="scientific-calculator" class="calculator hidden">
+
+    <div id="display-scientific">0</div>
+
+    <div class="buttons">
+
+      <button onclick="appendNumber('π')">π</button>
+
+      <button onclick="appendNumber('e')">e</button>
+
+      <button onclick="scientificOperation('sin')">sin</button>
+
+      <button onclick="scientificOperation('cos')">cos</button>
+
+      <button onclick="scientificOperation('tan')">tan</button>
+
+      <button onclick="scientificOperation('log')">log</button>
+
+      <button onclick="scientificOperation('ln')">ln</button>
+
+      <button onclick="scientificOperation('sqrt')">√</button>
+
+      <button onclick="scientificOperation('pow')">x^y</button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Pénzváltó -->
+
+  <div id="currency-converter" class="calculator hidden">
+
+    <div>
+
+      <input type="number" id="amount" placeholder="Összeg">
+
+      <select id="currency-from">
+
+        <option value="USD">USD</option>
+
+        <option value="EUR">EUR</option>
+
+        <option value="HUF">HUF</option>
+
+      </select>
+
+      <select id="currency-to">
+
+        <option value="USD">USD</option>
+
+        <option value="EUR">EUR</option>
+
+        <option value="HUF">HUF</option>
+
+      </select>
+
+      <button onclick="convertCurrency()">Átváltás</button>
+
+    </div>
+
+    <div id="currency-result"></div>
+
+  </div>
+
+
+
   <script src="script.js"></script>
 
 </body>
 
 </html>
+
+
+    
+
+    
