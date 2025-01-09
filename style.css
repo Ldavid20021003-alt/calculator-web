@@ -85,3 +85,79 @@ body {
     background: #f4f4f4;
   
   }
+
+hidden {
+
+  display: none;
+
+}
+
+
+
+#menu {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+#menu button {
+
+  margin: 0 5px;
+
+  padding: 10px 20px;
+
+  background-color: #007BFF;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+
+
+#menu button:hover {
+
+  background-color: #0056b3;
+
+}
+
+
+
+.calculator {
+
+  display: none;
+
+  text-align: center;
+
+}
+
+
+
+.calculator.active {
+
+  display: block;
+
+}
+
+
+
+.buttons button {
+
+  padding: 20px;
+
+  font-size: 1.2em;
+
+  margin: 5px;
+
+}
