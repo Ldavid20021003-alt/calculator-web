@@ -1,142 +1,6 @@
 body {
 
-    font-family: Arial, sans-serif;
-  
-    background: #f4f4f4;
-  
-    display: flex;
-  
-    justify-content: center;
-  
-    align-items: center;
-  
-    height: 100vh;
-  
-    margin: 0;
-  
-  }
-  
-  
-  
-  #calculator {
-  
-    width: 300px;
-  
-    background: white;
-  
-    border-radius: 8px;
-  
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  
-    overflow: hidden;
-  
-  }
-  
-  
-  
-  #display {
-  
-    background: #222;
-  
-    color: white;
-  
-    font-size: 2em;
-  
-    text-align: right;
-  
-    padding: 10px;
-  
-  }
-  
-  
-  
-  .buttons {
-  
-    display: grid;
-  
-    grid-template-columns: repeat(4, 1fr);
-  
-    gap: 1px;
-  
-    background: #ccc;
-  
-  }
-  
-  
-  
-  button {
-  
-    padding: 20px;
-  
-    font-size: 1.2em;
-  
-    border: none;
-  
-    background: white;
-  
-    cursor: pointer;
-  
-  }
-  
-  
-  
-  button:hover {
-  
-    background: #f4f4f4;
-  
-  }
-
-hidden {
-
-  display: none;
-
-}
-
-
-
-#menu {
-
-  display: flex;
-
-  justify-content: center;
-
-  margin-bottom: 20px;
-
-}
-
-
-
-#menu button {
-
-  margin: 0 5px;
-
-  padding: 10px 20px;
-
-  background-color: #007BFF;
-
-  color: white;
-
-  border: none;
-
-  border-radius: 5px;
-
-  cursor: pointer;
-
-}
-
-
-
-#menu button:hover {
-
-  background-color: #0056b3;
-
-}
-
-
-
-.calculator {
-
-  display: none;
+  font-family: Arial, sans-serif;
 
   text-align: center;
 
@@ -144,20 +8,64 @@ hidden {
 
 
 
-.calculator.active {
+.calculator-buttons,
 
-  display: block;
-
-}
-
-
-
-.buttons button {
+.scientific-buttons {
 
   padding: 20px;
 
-  font-size: 1.2em;
+  font-size: 18px;
 
-  margin: 5px;
+  background-color: #f0f0f0;
+
+  border: 1px solid #ccc;
+
+  cursor: pointer;
 
 }
+
+
+
+button {
+
+  padding: 20px;
+
+  font-size: 18px;
+
+  background-color: #f0f0f0;
+
+  border: 1px solid #ccc;
+
+  cursor: pointer;
+
+}
+
+
+
+button:hover {
+
+  background-color: #ddd;
+
+}
+
+
+
+#display {
+
+  width: 30%;
+
+  padding: 10px;
+
+  font-size: 20px;
+
+  margin-bottom: 20px;
+
+  text-align: right;
+
+}
+
+
+
+
+
+
