@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pénzváltó</title>
+
+  <link rel="stylesheet" href="css/currency-style.css">
+
+</head>
+
+<body>
+
+  <div class="currency-converter">
+
+    <h1>Pénzváltó</h1>
+
+    
+
+    <div class="display">
+
+      <input type="text" id="amount" placeholder="0" readonly>
+
+      <div class="currency-select">
+
+        <select id="from-currency">
+
+          <option value="USD">USD</option>
+
+          <option value="EUR">EUR</option>
+
+          <option value="HUF" selected>HUF</option>
+
+          <!-- Add more currencies -->
+
+        </select>
+
+        <span>→</span>
+
+        <select id="to-currency">
+
+          <option value="USD">USD</option>
+
+          <option value="EUR" selected>EUR</option>
+
+          <option value="HUF">HUF</option>
+
+          <!-- Add more currencies -->
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Pénzváltó gombok -->
+
+    <div class="buttons">
+
+      <button onclick="appendValue(7)">7</button>
+
+      <button onclick="appendValue(8)">8</button>
+
+      <button onclick="appendValue(9)">9</button>
+
+      <button class="operator" onclick="convertCurrency()">↔</button>
+
+      <button onclick="appendValue(4)">4</button>
+
+      <button onclick="appendValue(5)">5</button>
+
+      <button onclick="appendValue(6)">6</button>
+
+      <button class="operator" onclick="clearDisplay()">AC</button>
+
+      <button onclick="appendValue(1)">1</button>
+
+      <button onclick="appendValue(2)">2</button>
+
+      <button onclick="appendValue(3)">3</button>
+
+      <button class="operator" onclick="appendValue('.')">,</button>
+
+      <button class="wide" onclick="appendValue(0)">0</button>
+
+      <br>
+
+      <button class="back-home" id="backHome">Vissza a kezdőlapra</button>
+
+
+
+    <script>
+
+        document.getElementById("backHome").addEventListener("click", function () {
+
+            // Kezdőlapra irányítás (például index.html vagy bármilyen URL)
+
+            window.location.href = "index.html";
+
+        });
+
+    </script>
+     
+
+    </div>
+
+  </div>
+  
+
+
+  <script src="js/currency-converter.js"></script>
+  
+
+</body>
+
+</html>
