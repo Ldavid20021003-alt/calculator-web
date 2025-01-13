@@ -1,44 +1,16 @@
-// Aktív kalkulátor váltása
-
-function showCalculator(type) {
-
-  document.querySelectorAll('.calculator').forEach(el => el.classList.add('hidden'));
-
-  document.getElementById(`${type}-calculator`).classList.remove('hidden');
-
-}
-
-
-
-// Egyszerű számológép (meglévő funkciók)
-
-let currentNumber = '';
-
-let previousNumber = '';
-
-let operation = null;
-
-
+// Egyszerű számológép függvények
 
 function appendNumber(number) {
 
-  currentNumber += number;
-
-  updateDisplay('simple');
+  document.getElementById('result').value += number;
 
 }
 
 
 
-function chooseOperation(op) {
+function appendOperator(operator) {
 
-  if (currentNumber === '') return;
-
-  operation = op;
-
-  previousNumber = currentNumber;
-
-  currentNumber = '';
+  document.getElementById('result').value += operator;
 
 }
 
@@ -46,100 +18,64 @@ function chooseOperation(op) {
 
 function calculate() {
 
-  let result;
+  try {
 
-  const prev = parseFloat(previousNumber);
+    document.getElementById('result').value = eval(document.getElementById('result').value);
 
-  const current = parseFloat(currentNumber);
+  } catch (e) {
 
+    alert('Hiba a számításban!');
 
-
-  if (operation === '+') result = prev + current;
-
-  else if (operation === '-') result = prev - current;
-
-  else if (operation === '*') result = prev * current;
-
-  else if (operation === '/') result = prev / current;
-
-
-
-  currentNumber = result;
-
-  operation = null;
-
-  updateDisplay('simple');
+  }
 
 }
 
 
 
-function updateDisplay(type) {
+function clearResult() {
 
-  document.getElementById(`display-${type}`).innerText = currentNumber || '0';
-
-}
-
-
-
-function clearDisplay() {
-
-  currentNumber = '';
-
-  previousNumber = '';
-
-  operation = null;
-
-  updateDisplay('simple');
+  document.getElementById('result').value = '';
 
 }
 
 
 
-// Tudományos számítások
-
-function scientificOperation(op) {
-
-  const num = parseFloat(currentNumber);
-
-  if (op === 'sin') currentNumber = Math.sin(num);
-
-  else if (op === 'cos') currentNumber = Math.cos(num);
-
-  else if (op === 'tan') currentNumber = Math.tan(num);
-
-  else if (op === 'log') currentNumber = Math.log10(num);
-
-  else if (op === 'ln') currentNumber = Math.log(num);
-
-  else if (op === 'sqrt') currentNumber = Math.sqrt(num);
-
-  updateDisplay('scientific');
-
-}
-
-
-
-// Pénzváltó
-
-const exchangeRates = { USD: 1, EUR: 0.9, HUF: 350 };
-
-
+// Pénzváltó függvény
 
 function convertCurrency() {
 
-  const amount = parseFloat(document.getElementById('amount').value);
+  const amount = document.getElementById('amount').value;
 
-  const from = document.getElementById('currency-from').value;
-
-  const to = document.getElementById('currency-to').value;
+  const currency = document.getElementById('currency').value;
 
 
 
-  const result = (amount / exchangeRates[from]) * exchangeRates[to];
+  // Példa árfolyamok
 
-  document.getElementById('currency-result').innerText = `Eredmény: ${result.toFixed(2)} ${to}`;
+  const rates = {
+
+    USD: 1,
+
+    EUR: 0.9,
+
+    HUF: 320
+
+  };
+
+
+
+  const result = amount * rates[currency];
+
+  document.getElementById('result').innerText = `${result} ${currency}`;
 
 }
-  
-  
+
+
+
+
+
+ 
+
+
+
+
